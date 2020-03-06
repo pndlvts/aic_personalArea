@@ -1,0 +1,120 @@
+- BEMPUG.modifier = '_'
+
+include ../tab-menu/tab-menu
+include ../docs/docs
+include ../../components/input/input
+include ../reviews/reviews
+include ../../components/button/button
+include ../../components/brands/brands
+
+-
+  var foreignLangs = {
+        block: "langs",
+        dataName: "langs",
+        label: "Иностранные языки",
+        dataType: "multi",
+        selectTag: "select name=langs multiple data-type=multi",
+        options: [
+            {
+                value: "Английский",
+                tag: "option",
+                text: "Английский"
+            },
+            {
+                value: "Русский",
+                tag: "option",
+                text: "Русский"
+            },
+            {
+                value: "Немецкий",
+                tag: "option",
+                text: "Немецкий"
+            },
+            {
+                value: "Французский",
+                tag: "option",
+                text: "Французский"
+            }
+        ]
+    }
+
+-
+  var countries = {
+             dataType: "single",
+             block: "country",
+             dataName: "country",
+             label: "Страна",
+             selectTag: "select name=country data-type=single",
+             options: [
+                 {
+                     value: "Россия",
+                     tag: "option",
+                     text: "Россия"
+                 },
+                 {
+                     value: "Украина",
+                     tag: "option",
+                     text: "Украина"
+                 }
+             ]
+         };
+  var city = {
+          block: "city",
+          dataName: "city",
+          label: "Город",
+          dataType: "single",
+          selectTag: "select name=city data-type=single",
+          options: [
+              {
+                  value: "Москва",
+                  tag: "option",
+                  text: "Москва"
+              },
+              {
+                  value: "Краснодар",
+                  tag: "option",
+                  text: "Краснодар"
+              }
+          ]
+      }
+
+mixin user-data-edit(bem, data)
+    +b("user-data-edit")
+        +e("images")
+            +e("img-form", {t: "form action=' ' method=' '"})
+                +e("title") Аватар и обложка
+                +e("common-text") Загрузите изображения для аватара и обложки Вашей домашней страницы. Так Вам будет легче найти новых друзей. Результат Ваших действий Вы сможете увидеть наверху страницы.
+                +e("dropzone")
+                    +e("ava-load", {t: "input type=file id=ava-load"})
+                    +e("ava-label", {t: "label for=ava-load"})
+                        +e("avatar")
+                            span Фото на аватар
+                            +e("ava-drop")
+                                img.ava(src="./assets/media/ava.png" title=" " alt=" ")
+                    +e("cover-load", {t: "input type=file id=cover-load"})
+                    +e("cover-label", {t: "label for=cover-load"})
+                        +e("cover")
+                            span Обложка персональной страницы
+                            +e("cover-drop-block")
+                                img.cover(src="" title=" " alt=" " style="visibility: hidden")
+                                +e("cover-drop-zone")
+                +button({e: 'images', t: "button"}, "Сохранить изменения")
+        +e("personal-data")
+            +e("title") Личные данные
+            +e("personal-edit", {t: "form name=personal_edit"})
+                +input-block("personal-data", "Фамилия/Имя/Отчество", "input name=fio type=text required=required placeholder=' '")
+                +input-block("personal-data", "Имя на сайте", "input name=nickname type=text required=required placeholder=' '")
+                +select-block("personal-data birthday", "Дата Рождения", "input name=birthday type=text required=required readonly", [])
+                +input-block("personal-data phone", "Номер телефона", "input name=phone0 type=text required=required placeholder=' '")
+                +e("add-number", {e: "personal-data"}) Добавить номер телефона
+                +e("max-amount-number", {e: "personal-data"}) *Максимальное количество номеров
+                +e("home", {e: "personal-data"})
+                    +brands("personal-data country", countries)
+                    +brands("personal-data city", city)
+                +input-block("personal-data", "E-mail", "input name=email type=email required=required placeholder=' '")
+                +brands("personal-data", foreignLangs)
+                +e("del") Удалить
+                +e("confirm-block")
+                    +e("confirm-checkbox", {t: "input type=checkbox id=confirm"})
+                    +e("confirm-label", {t: "label for=confirm"}) Согласие на обработку персональных данных
+                +button({e: 'personal-edit-send', t: "button"}, "Сохранить изменения")

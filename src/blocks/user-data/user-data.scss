@@ -1,0 +1,35 @@
+.user-data{
+  @include col();
+  background: $light;
+  min-height:772px;
+  @include size-hd(7);
+  @include size-xl(7);
+  @include size-lg(6);
+  @include size-md(5);
+  border-radius: 10px;
+  max-width: 670px;
+  &__content{
+    display: none;
+    @include col-padding();
+    @include size(12);
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    &_active{
+      display: none;
+    }
+  }
+  &__row{
+    @include row-flex();
+    margin: 0 !important;
+  }
+  .active{
+    display: block;
+  }
+}
+@include to-md(){
+  .user-data{
+    margin: 0 !important;
+    margin-top: 59px !important;
+    width: 100%;
+  }
+}

@@ -1,0 +1,25 @@
+.main{
+  margin-top: 53px;
+  margin-bottom: 53px;
+  width: 100%;
+  background-color: #E5E5E5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #E5E5E5;
+  &__wrapper{
+    @include container();
+    height: auto;
+    width: 100%;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__row{
+    @include row-flex();
+    height: auto;
+    width: 100%;
+    background: none;
+  }
+}

@@ -1,0 +1,63 @@
+.user-info-col{
+  width: 270px;
+}
+.user-info{
+  background: $light;
+  width: 100%;
+  border-radius: 10px;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 40px;
+  padding-left: 59px;
+  padding-bottom: 71px;
+  margin-bottom: 20px;
+  &__photo{
+    img{
+      width: 150px;
+      height: 150px;
+      border: none;
+      border-radius: 50%;
+    }
+  }
+  &__who-is{
+    margin-top: 14px;
+    color: $azul;
+  }
+  &__name{
+    color: $black-three;
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 25px;
+    margin-bottom: 14px;
+  }
+  &__title{
+    color: $black-three;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 14px;
+  }
+  &__info{
+    color: $black-three;
+    margin-top: 3px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+@include to-md(){
+  .user-info-col{
+    width: 100%;
+  }
+}
+@include to-sm(){
+  .user-info{
+    &__button{
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

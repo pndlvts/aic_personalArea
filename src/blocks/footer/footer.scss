@@ -1,0 +1,115 @@
+.footer{
+  width: 100%;
+  height: auto;
+  background: $azul;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  &__wrapper{
+    @include container();
+    height: auto;
+    width: 100%;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__row{
+    @include row-flex();
+    height: auto;
+    width: 100%;
+    background: none;
+  }
+  &__footer-block{
+    height: auto;
+    @include col();
+    @include size-hd(3);
+    @include size-xl(3);
+    @include size-lg(3);
+    @include size-md(6);
+    @include size-sm(6);
+    @include size-xs(12);
+    margin: 0 !important;
+  }
+  &__footer-menu-item:first-child{
+    margin-top: 0;
+  }
+  &__footer-menu-item{
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    a, a:active, a:visited, a:hover{
+      color: $light;
+    }
+  }
+  &__copyright{
+    margin-top: 50px;
+    color: $light;
+  }
+  &__title{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: $light;
+    margin-bottom: 20px;
+  }
+  &__footer-about-item{
+    a, a:visited, a:hover, a:active{
+      color: $light;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  &__social-title{
+    color: $light;
+    margin-top: 60px;
+    width: 130px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &__footer-mobile{
+    font-size: 14px;
+    line-height: 20px;
+    width: 200px;
+    color: $light;
+  }
+  form{
+    margin-top: -20px;
+  }
+  &__social-icons{
+    margin-top: 13px;
+    display: flex;
+  }
+  &__facebook, &__inst, &__github{
+    display: block;
+    width: 27px; height: 28px;
+  }
+  &__facebook{
+    background: url('../icons/css_sprites.png') -143px -10px;
+  }
+  &__inst{
+    background: url('../icons/css_sprites.png') -10px -108px;
+    margin-left: 13px;
+  }
+  &__github{
+    background: url('../icons/css_sprites.png') -143px -58px;
+    margin-left: 13px;
+  }
+  &__badges{
+    margin-top: 87px;
+  }
+  &__app-store{
+    background: url('../icons/css_sprites.png') -10px -58px;
+    width: 100px; height: 30px;
+    display: block;
+  }
+  &__google-play{
+    background: url('../icons/css_sprites.png') -10px -10px;
+    width: 113px; height: 28px;
+    margin-top: 20px;
+    display: block;
+  }
+  @import "__comment/__comment";
+}

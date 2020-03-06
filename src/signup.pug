@@ -1,0 +1,21 @@
+include ../node_modules/bempug/index
+
+- BEMPUG.modifier = '_';
+
+include ./blocks/head/head
+//include ./blocks/nav/nav
+include ./blocks/sign/sign
+include ./blocks/footer/footer
+
+-
+    var nav = {
+    leftSide:[],
+    rightSide: []
+    }
+
+doctype html
+html
+    body
+        //+nav({}, nav)
+        +signUp({}, {})
+        +footer()

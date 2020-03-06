@@ -1,0 +1,40 @@
+.menu{
+  width: 150px;
+  background: none;
+  position: relative;
+  margin-left: 19px;
+  &__item{
+    margin-top: 20px;
+    a, a:active, a:visited{
+      display: block;
+      color: rgba($black-three, 0.8);
+      font-size: 20px;
+      line-height: 25px;
+      transition: 0.5s;
+    }
+    a:hover{
+      display: block;
+      color: $azul;
+      transform: translateX(-16px);
+      transition: 0.5s;
+    }
+    &_active{
+      a, a:active, a:visited{
+        color: $azul !important;
+      }
+    }
+    &_active::before{
+      content: "";
+      display: inline-block;
+      background: $azul;
+      height: 21px;
+      width: 4px;
+      left: -16px;
+      position: absolute;
+    }
+    &_active:hover::before{
+      opacity: 0;
+      transition: 0.5s;
+    }
+  }
+}

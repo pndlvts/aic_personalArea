@@ -1,0 +1,25 @@
+- BEMPUG.modifier = '_'
+
+include ../../components/button/button
+
+mixin user-info(bem, data)
+    +b("user-info-col")
+        +b("user-info")
+            +e("photo")
+                img(src="./assets/media/photo.png")
+            +e("who-is") Арендодатель
+            +e("name") Иванова Елена Павловна
+            +e("title") Имя на сайте
+            +e("info") Elena Pavlovna
+            +e("title") Контактный телефон
+            +e("info") +7 (891) 245-65-67
+            +e("title") Дата рождения
+            +e("info") 23.09.1970
+            +e("title") E-mail
+            +e("info") elenpavl@mail.ru
+            +e("title") Страна, город
+            +e("info") Россия, Сочи
+            +e("title") Иностранные языки
+            +e("info") Русский, Французский
+        if userInfoBtn == true
+            +button({e: "user-info", t: "a href=userEdit.html"}, "Редактировать профиль")

@@ -1,0 +1,20 @@
+- BEMPUG.modifier = '_'
+
+include ../../components/input/input
+include ../../components/button/button
+
+mixin signIn(bem, data)
+     +b("sign-in")
+         +e("form", {t: "form method=post action=' '"})
+             +input-block("sign-in", "Логин", "input name=login type=text required=required placeholder=' '")
+             +input-block("sign-in", "Пароль", "input name=login type=password required=required placeholder=' '")
+             +button({e: 'sign-in', t: "button"}, "Войти")
+             +e("sign-up-link", {t: "a href=signup.html"}) Регистрация
+
+mixin signUp(bem, data)
+     +b("sign-up")
+         +e("form", {t: "form method=post action=' '"})
+             +input-block("sign-up", "Логин", "input name=login type=text required=required placeholder=' '")
+             +input-block("sign-up", "Пароль", "input name=password type=text required=required placeholder=' '")
+             +input-block("sign-up", "Повторите пароль", "input name=repeat type=text required=required placeholder=' '")
+             +button({e: 'sign-up', t: "button"}, "Зарегистрироваться")

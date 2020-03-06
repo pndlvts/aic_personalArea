@@ -1,0 +1,53 @@
+- BEMPUG.modifier = '_'
+
+include ../../components/common-input/common-input
+include ../../components/common-button/common-button
+
+mixin footer()
+    +b("footer")
+        +e("wrapper")
+            +e("row")
+               +e("footer-block")
+                    +e("footer-menu", {t: "ul"})
+                        +e("footer-menu-item")
+                            a(href="#!") О нас
+                        +e("footer-menu-item")
+                            a(href="#!") Услуги
+                        +e("footer-menu-item")
+                            a(href="#!") Сотрудники
+                        +e("footer-menu-item")
+                            a(href="#!") Фотогалерея
+                        +e("footer-menu-item")
+                            a(href="#!") Контакты
+                    +e("copyright") &#169; 2020
+               +e("footer-block")
+                    +e("title") О сайте
+                    +e("footer-about", {t: "ul"})
+                        +e("footer-about-item")
+                            a(href="#!") Условия пользования
+                        +e("footer-about-item")
+                            a(href="#!") Реклама на сайте
+                        +e("footer-about-item")
+                            a(href="#!") Безопасность
+                        +e("footer-about-item")
+                            a(href="#!") Поддержка
+                    +e("social-title") Давайте дружить в соцсетях
+                    +e("social-icons")
+                        +e("facebook", {t: "a href=#!"})
+                        +e("inst", {t: "a href=#!"})
+                        +e("github", {t: "a href=#!"})
+               +e("footer-block")
+                    +e("title") Мобильное приложение
+                    +e("footer-mobile") Быть в курсе событий легко. Скачай наше приложение и всегда будь рядом.
+                    +e("badges")
+                        +e("app-store", {t: "a href=#!"})
+                        +e("google-play", {t: "a href=#!"})
+               +e("footer-block")
+                    +e("title") Обратная связь
+                    +b("comment", {t: "form name=footerform method=post", e: "&"})
+                        +common-input-block("comment", "Ваше имя", "input name=name type=text required=required placeholder=' '")
+                        +common-input-block("comment", "Email", "input name=email type=email required=required placeholder=' '")
+                        +common-input-block("comment", "Оставьте комментарий", "input name=name type=text required=required placeholder=' '")
+                        +e("agreement") Нажимая «Отправить», даю согласие на обработку персональных данных
+                        +common-button("comment", "Отправить", "button type=button name=sendfooterform")
+

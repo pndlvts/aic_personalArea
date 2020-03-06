@@ -1,0 +1,32 @@
+.tab-menu{
+  display: flex;
+  &__tab-menu-item{
+    border-bottom: 4px solid rgba($black-three, 0.4);
+    color: rgba($black-three, 0.4);
+    padding-top: 24px;
+    padding-bottom: 18px;
+    width: 100%;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+    &_active{
+      border-bottom: 4px solid $azul;
+      color: $azul;
+      padding-top: 24px;
+      padding-bottom: 18px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+@include to-sm(){
+  .tab-menu{
+    &__tab-menu-item{
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+}

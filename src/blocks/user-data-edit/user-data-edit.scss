@@ -1,0 +1,191 @@
+.user-data-edit{
+  @include col();
+  background: none;
+  min-height:772px;
+  @include size-hd(7);
+  @include size-xl(7);
+  @include size-lg(6);
+  @include size-md(5);
+  border-radius: 10px;
+  max-width: 670px;
+  &__images, &__personal-data{
+    display: block;
+    width: 100%;
+    background-color: $light;
+    border-radius: 10px;
+    padding-top: 40px;
+    padding-right: 40px;
+    padding-bottom: 41px;
+    padding-left: 40px;
+  }
+  &__personal-data{
+    margin-top: 27px;
+  }
+  &__title{
+    color: $azul;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 24px;
+    margin-bottom: 13px;
+  }
+  &__common-text{
+    color: rgba($black-three, 0.6);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  &__dropzone, &__confirm-label{
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 31px;
+    span{
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 25px;
+      color: $black-three;
+      display: block;
+    }
+  }
+  &__avatar{
+    margin-right: 58px;
+    width: 155px;
+  }
+  &__ava-drop{
+    margin-top: 10px;
+    width: 155px;
+    height: 155px;
+    border: 1px solid #DFE6E6;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: #F2F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    .ava{
+      width: 123px;
+      height: 141px;
+    }
+  }
+  &__cover-drop-block{
+    width: 100%;
+    height: 155px;
+    margin-top: 10px;
+    border: 1px solid #DFE6E6;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: #F2F5F5;
+    padding: 14px;
+  }
+  &__cover-drop-zone{
+    background: none;
+    border: 2px dashed #C6D2D2;
+    box-sizing: border-box;
+    border-radius: 3px;
+    width: 100%;
+    height: 100%;
+  }
+  &__add-number{
+    color: $azul;
+    cursor: pointer;
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  &__add-number::before{
+    content: "";
+    display: inline-block;
+    width: 18px; height: 18px;
+    background: url('../../assets/icons/css_sprites.png') -137px -108px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  &__home{
+    display: flex;
+  }
+  .city{
+    width: 200px;
+    margin-left: 9px;
+    &__select-wrapper{
+      width: 100%;
+    }
+  }
+  .country{
+    width: 160px;
+    &__select-wrapper{
+      width: 100%;
+    }
+    &__select{
+      width: 100%;
+    }
+  }
+  .images__button, .personal-edit__button{
+    max-width: 100% !important;
+  }
+  &__del{
+    color: $azul;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 25px;
+    margin-top: 25px;
+  }
+  &__confirm-block{
+    margin-top: 32px;
+  }
+  &__confirm-checkbox{
+    display: none;
+  }
+  &__confirm-label{
+    color: rgba($black-three, 0.6);
+    font-size: 12px;
+    line-height: 15px;
+    display: block;
+  }
+  &__confirm-label::before{
+    content: " ";
+    display: inline-block;
+    background-color: rgba($black-three, 0.3);
+    height: 15px;
+    width: 15px;
+    margin-right: 10px;
+    vertical-align: bottom;
+  }
+  &__confirm-checkbox:checked + &__confirm-label::before{
+    background-image: url(../../assets/icons/css_sprites.png);
+    background-position: -186px -99px;
+    background-repeat: no-repeat;
+  }
+  &__max-amount-number{
+    font-size: 8px;
+    color: #FF4040;
+    display: none;
+    margin-top: 17px;
+  }
+}
+@include to-lg(){
+  .user-data-edit {
+    &__dropzone {
+      display: block !important;
+    }
+    &__avatar{
+      width: 100%;
+    }
+    &__ava-drop{
+      width: 100%;
+    }
+  }
+}
+@include to-md(){
+  .user-data-edit{
+    margin: 0 !important;
+    margin-top: 59px !important;
+    width: 100%;
+  }
+}

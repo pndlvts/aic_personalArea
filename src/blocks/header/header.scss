@@ -1,0 +1,14 @@
+.header{
+  background-color: $azul;
+  .row{
+    @include row-flex;
+    margin: 0 !important;
+  }
+  .col{
+    @include size(12);
+  }
+  img{
+    width: 100vw;
+    height: auto;
+  }
+}

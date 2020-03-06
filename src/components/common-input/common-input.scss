@@ -1,0 +1,70 @@
+.common-input-block {
+  &__common-wrapper {
+    position: relative;
+    display: block;
+  }
+
+  &__common-input {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $light;
+    border-radius: 0;
+    outline: none;
+    height: 45px;
+    width: 100%;
+    font-size: 16px;
+    margin: 0 0 20px 0;
+    padding: 0;
+    box-shadow: none;
+    box-sizing: content-box;
+    transition: all .3s;
+    color: $light;
+  }
+
+  &__common-input:valid + span {
+    transform: translateY(-25px) scale(0.8);
+    transform-origin: 0;
+  }
+
+  label > &__common-input:valid {
+    border-bottom: 1px solid $light;
+    box-shadow: 0 1px 0 0 $light;
+  }
+
+  &__common-wrapper > span {
+    color: rgba($light, 0.5);
+    position: absolute;
+    top: 20px;
+    left: 0;
+    font-size: 16px;
+    cursor: text;
+    transition: .2s ease-out;
+  }
+
+  &__common-wrapper > &__common-input:focus + span {
+    transform: translateY(-25px) scale(0.8);
+    transform-origin: 0;
+    color: $light;
+  }
+
+  &__common-wrapper > &__common-input:focus {
+    border-bottom: 1px solid $light;
+    box-shadow: 0 1px 0 0 $light;
+    color: $light;
+  }
+
+  &_invalid + span {
+    transform: translateY(-25px) scale(0.8);
+    transform-origin: 0;
+    color: $light;
+  }
+  &_invalid {
+    border-bottom: 1px solid #FF4040 !important;
+    box-shadow: 0 1px 0 0 #FF4040 !important;
+    color: $light;
+  }
+  &_invalid + span::after{
+    content: " – некорректное значение";
+  }
+}

@@ -1,0 +1,7 @@
+- BEMPUG.modifier = '_'
+
+mixin common-input-block(bem, text, tag)
+    +b('common-input-block', bem)
+        +e("common-wrapper", {e: bem, t:"label"})
+            +e("common-input", {e: bem, t: tag})
+            +e("placeholder", {e: bem, t: "span"})= text

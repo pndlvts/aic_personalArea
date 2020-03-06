@@ -1,0 +1,45 @@
+.input-block{
+  margin-top: 17px;
+  &__label{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba($black-three, 0.6);
+    display: block;
+  }
+  &__input, &__select{
+    border-radius: 5px;
+    border: 1px solid #DADADA;
+    width: 100%;
+    max-width: 370px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+  &__input_invalid{
+    border-color: #FF4040;
+  }
+  &__select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    display: inline-block;
+  }
+  &__select-wrapper, &__input-wrapper{
+    position: relative;
+    width: 72.5%;
+    max-width: 370px;
+  }
+  &__select-wrapper::after{
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: 6px; height: 4px;
+    background: url('../../assets/icons/css_sprites.png') -190px -131px;
+    top: 50%;
+    right: 5%;
+  }
+}

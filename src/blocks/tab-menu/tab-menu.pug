@@ -1,0 +1,6 @@
+- BEMPUG.modifier = '_'
+
+mixin tab-menu(bem, data)
+    +b("tab-menu", {e: bem})
+        for tab in data.tabs
+            +e("tab-menu-item", {e: tab.bem, m: tab.modifier, b: tab.block, t: tab.tag})=tab.text

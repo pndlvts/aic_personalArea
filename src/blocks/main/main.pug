@@ -1,0 +1,8 @@
+- BEMPUG.modifier = '_'
+
+mixin main(bem, mixins)
+    +b("main", bem)
+        +e("wrapper")
+            +e("row")
+                for item in mixins
+                    +#{item.mixin}(item.parameters)

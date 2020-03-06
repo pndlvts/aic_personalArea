@@ -1,0 +1,139 @@
+.brands-select{
+  display: none;
+}
+.brands-main{
+  margin-top: 17px;
+  position: relative;
+  &__label{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba($black-three, 0.6);
+    display: block;
+  }
+  &__select{
+    color: $black-three;
+    border-radius: 5px;
+    border: 1px solid #DADADA;
+    width: 100%;
+    max-width: 370px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 7px;
+    padding-right: 7px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    display: inline-block;
+  }
+  &__select_active{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+  }
+  &__input_invalid{
+    border-color: #FF4040;
+  }
+  &__select-wrapper{
+    position: relative;
+    width: 72.5%;
+    max-width: 370px;
+  }
+  &__select::after{
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: 6px; height: 4px;
+    background: url('../../assets/icons/css_sprites.png') -190px -131px;
+    top: 50%;
+    right: 5%;
+  }
+  &__options{
+    max-height: 100px;
+    overflow-y: scroll;
+    background-color: #DADADA;
+    transform: scaleY(0);
+    height: auto;
+    border: 1px solid #DADADA;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    top: 100%;
+    left: 0;
+    transition: 0.2s;
+    transform-origin: top;
+  }
+  &__options_active{
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: 0.2s;
+  }
+  &__option{
+    position: relative;
+    color: $black-three;
+    background: #DADADA;
+    transition: 0.5s;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 14px;
+    padding-right: 7px;
+    cursor: pointer;
+  }
+  &__option:last-child{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  &__option:hover{
+    position: relative;
+    color: $black-three;
+    background: $azul;
+    transition: 0.5s;
+  }
+  &__option_active{
+    background-color: $azul;
+    color: $light;
+  }
+  &__option_active:hover{
+    background-color: rgba($azul, 0.7);
+    color: $light;
+  }
+  &__option_active::before{
+    content: " ";
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    background: url(../../assets/icons/css_sprites.png);
+    background-position: -186px -99px;
+    background-repeat: no-repeat;
+    height: 15px;
+    width: 15px;
+  }
+  &__option_active:hover::before{
+    content: " ";
+    display: inline-block;
+    background-image: url(../../assets/icons/css_sprites.png);
+    background-position: -186px -99px;
+    background-repeat: no-repeat;
+    height: 15px;
+    width: 15px;
+  }
+}
+
+.disabled{
+  .brands-main__select{
+    background: rgba($black-three, 0.4);
+  }
+  .brands-main__select_active{
+    border-bottom: 1px solid #DADADA;
+    border-radius: 5px;
+  }
+  .brands-main__options_active {
+    transform: scaleY(0);
+  }
+}

@@ -1,0 +1,14 @@
+- BEMPUG.modifier = '_'
+
+mixin nav(bem, data)
+    +b("nav", {t: "nav"}, bem)
+        +e("wrapper")
+            +e("row")
+                +e("left-side", {t: "ul"})
+                    for item in data.leftSide
+                        +e("left-item")
+                            a(href=item.link)=item.title
+                +e("right-side", {t: "ul"})
+                    for item in data.rightSide
+                        +e("right-item")
+                            a(href=item.link)=item.title

@@ -1,0 +1,66 @@
+- BEMPUG.modifier = '_'
+
+include ../tab-menu/tab-menu
+include ../docs/docs
+include ../../components/input/input
+include ../reviews/reviews
+include ../../components/brands/brands
+include ../../components/button/button
+
+-
+    var menu = {
+        tabs: [
+            {
+                bem: "user-data",
+                block: "tab-docs",
+                modifier: "active",
+                text: "Документы арендодателя",
+                tag: "div data-tab=docs"
+            },
+            {
+                bem: "user-data",
+                block: "tab-reviews",
+                modifier: "",
+                text: "Отзывы квартиросъемщиков",
+                tag: "div data-tab=reviews"
+            }
+        ]
+    }
+    var docs = {
+              block: " ",
+              label: "Тип документа",
+              dataType: "single",
+              selectTag: "select name=docType data-type=single",
+              options: [
+                  {
+                      value: "Паспорт",
+                      tag: "option",
+                      text: "Паспорт"
+                  },
+                  {
+                      value: "Другой документ",
+                      tag: "option",
+                      text: "Другой документ"
+                  }
+              ]
+          }
+
+mixin user-data(bem, data)
+    +b("user-data")
+        +tab-menu("user-data", menu)
+        +e("row", {b: "tabs"})
+            +e("content active", {m: "active", b: "docs", e: "tab-menu", t: "div data-anchor=docs"})
+                +docs({}, {})
+                +b("add-doc", {t: "form", e: "&"})
+                    +input-block("add-doc", "Кем выдан", "input name=issues-by type=text required=required placeholder=' '")
+                    +input-block("add-doc", "Дата выдачи", "input name=issues-date type=text required=required placeholder=' '")
+                    +brands("personal-data", docs)
+                    +e("add-document", {t: "input type=file id=add-document"})
+                    +e("drop", {e: "add-doc", t: "label for=add-document"})
+                        +e("drop-doc-zone", {e: "add-doc"}) Добавьте документ
+                    +e("warning") &nbsp;
+                    +button({e: 'add-doc', t: "button"}, "Добавить")
+            +e("content", {b: "reviews", e: "tab-menu", t: "div data-anchor=reviews"})
+                +reviews({}, {})
+                +e("more", {e: 'reviews'})
+                    +button({e: 'reviews', t: "button"}, "Смотреть еще")

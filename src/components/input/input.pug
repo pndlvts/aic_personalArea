@@ -1,0 +1,16 @@
+- BEMPUG.modifier = '_'
+
+mixin input-block(bem, text, tag)
+    +b('input-block', bem)
+        +e("wrapper", {e: bem})
+            +e("label", {e: bem, t: "span"})= text
+            +e("input-wrapper", {e: bem})
+                +e("input", {e: bem, t: tag})
+mixin select-block(bem, text, tag, options)
+    +b('input-block', bem)
+        +e("wrapper", {e: bem})
+            +e("label", {e: bem, t: "span"})= text
+            +e("select-wrapper", {e: bem})
+                +e("select", {e: bem, t: tag})
+                    for option in options
+                        +e("option", {t: "option value="+option.value})=option.title

@@ -1,0 +1,29 @@
+{
+  "block": "langs",
+  "dataName": "langs",
+  "label": "Иностранные языки",
+  "dataType": "multi",
+  "selectTag": "select name=langs multiple data-type=multi",
+  "options": [
+  {
+    "value": "Английский",
+    "tag": "option",
+    "text": "Английский"
+  },
+  {
+    "value": "Русский",
+    "tag": "option",
+    "text": "Русский"
+  },
+  {
+  "value": "Немецкий",
+  "tag": "option",
+  "text": "Немецкий"
+  },
+  {
+  "value": "Французский",
+  "tag": "option",
+  "text": "Французский"
+  }
+  ]
+}

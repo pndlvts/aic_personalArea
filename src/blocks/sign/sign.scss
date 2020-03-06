@@ -1,0 +1,21 @@
+.sign-in, .sign-up{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  &__form{
+    margin-top: -17px;
+  }
+  &__input-wrapper{
+    width: 100% !important;
+  }
+  &__button{
+    margin-top: 17px;
+  }
+  &__sign-up-link{
+    margin-top: 17px;
+    color: $azul;
+    display: block;
+    text-align: center;
+  }
+}

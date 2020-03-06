@@ -1,0 +1,68 @@
+.docs{
+  margin-left: 100px;
+  margin-right: 60px;
+  padding-top: 54px;
+  padding-bottom: 67px;
+}
+.doc{
+  position: relative;
+  margin-top: 33px;
+  &__title, &__data, &__name, &__del{
+    color: $black-three;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  &__name{
+    margin-bottom: 9px;
+  }
+  &__title{
+    font-weight: bold;
+  }
+  &__del{
+    color: $azul;
+    margin-top: 12px;
+    cursor: pointer;
+  }
+}
+.doc:first-child{
+  margin-top: 0;
+}
+.doc::before{
+  content: "";
+  display: block;
+  position: absolute;
+  background: url('../../assets/icons/css_sprites.png') -57px -108px;
+  height: 30px;
+  width: 25px;
+  left: -40px;
+}
+.add-doc {
+  &__warning{
+    font-size: 8px;
+    color: #f9ba10;
+  }
+  &__button {
+    margin-top: 33px;
+    width: 72.5% !important;
+  }
+  &__drop{
+    width: 73%;
+    height: 100px;
+    background-color: #DFE6E6;
+    border: none;
+    margin-top: 17px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $azul;
+    text-align: center;
+    padding: 14px;
+  }
+  &__drop-doc-zone{
+    padding: 14px;
+    border: 2px dashed $azul;
+    background-color: #DFE6E6;
+    border-radius: 5px;
+  }
+}

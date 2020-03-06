@@ -1,0 +1,16 @@
+- BEMPUG.modifier = '_'
+
+mixin menu(bem, data)
+    +b("menu", {t: "ul"})
+        +e("item", {t: "div data-menu=news"})
+            a(href="#!") Новости
+        +e("item", {t: "div data-menu=index"})
+            a(href="#!") Персональная информация
+        +e("item", {t: "div data-menu=clients"})
+            a(href="#!") Клиенты
+        +e("item", {t: "div data-menu=documents"})
+            a(href="#!") Документы
+        +e("item", {t: "div data-menu=calendar"})
+            a(href="#!") Календарь
+        +e("item", {t: "div data-menu=messages"})
+            a(href="#!") Сообщения

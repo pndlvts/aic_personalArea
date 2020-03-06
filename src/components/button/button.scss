@@ -1,0 +1,29 @@
+.button {
+  $self: &;
+  transition: all 0.125s linear;
+  cursor: pointer;
+  @include from-sm() {
+    padding: 8px 19px 6px;
+  }
+  @include to-sm() {
+    padding: 6px 15px 5px;
+  }
+  &#{$self}_transparent {
+    border: solid 2px $brand-yellow;
+    color: $black-two;
+    &:hover {
+      background-color: $brand-yellow;
+    }
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $light;
+  width: 270px;
+  height: 60px;
+  background: radial-gradient(100.83% 100.83% at 50.16% 132.5%, #00D1FF 0%, rgba(0, 209, 255, 0) 100%), #0066CC;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  max-width: 100%
+}

@@ -1,0 +1,55 @@
+include ../node_modules/bempug/index
+- BEMPUG.modifier = '_';
+
+include ./blocks/head/head
+include ./blocks/nav/nav
+include ./blocks/header/header
+include ./blocks/main/main
+include ./blocks/footer/footer
+
+include ./blocks/user-info/user-info
+include ./blocks/user-data-edit/user-data-edit
+
+//- blocks imports
+- var userInfoBtn = false //кнопка редактирования профиля
+
+-
+    var nav = {
+    leftSide:[
+        {
+         link: "index.html",
+         title: "Вернуться на главную"
+        }
+    ],
+    rightSide: [
+        {
+         link: "indexEN.html",
+         title: "EN"
+        },
+        {
+         link: "signin.html",
+         title: "Выход"
+        }
+        ]
+    }
+
+-
+    var blocks = [
+        {
+            mixin: "user-info",
+            parameters: [{}, {}]
+        },
+        {
+            mixin: "user-data-edit",
+            parameters: [{}, {}]
+        },
+        ]
+//- variables
+
+doctype html
+html
+    body
+        +nav({}, nav)
+        +header()
+        +main({}, blocks)
+        +footer()

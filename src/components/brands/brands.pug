@@ -1,0 +1,27 @@
+- BEMPUG.modifier = '_'
+
+//-
+
+    var data = {
+        type: "multi" or "single",
+        selectTag: "select name=name data-type=" + type,
+        options: [
+            {
+                tag: "option value=value",
+                text: "text"
+            }
+        ]
+    }
+
+mixin brands(bem, data)
+    +b("brands-select", {t: data.selectTag})(data-mode=data.type)
+        for option in data.options
+            +e("brands-option", {t: option.tag, e: bem})(value=option.value)
+    +b("brands-main", {b: data.block})
+        +e("wrapper", {e: bem})
+            +e("label", {e: bem, t: "span"})=data.label
+            +e("select-wrapper", {e: bem})
+                +e("select", {e: bem})(data-mode=data.dataType) &nbsp;
+                +e("options", {e: bem})(data-name=data.dataName)
+                    for option in data.options
+                        +e("option", {e: bem})(data-value=option.value)=option.text
